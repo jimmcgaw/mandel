@@ -47,6 +47,10 @@ export default class Complex {
     }
   }
 
+  magnitude(){
+    return Math.sqrt( Math.pow(this.real, 2) + Math.pow(this.imaginary, 2) );
+  }
+
   complexConjugate(){
     return new Complex(this.real, -this.imaginary);
   }

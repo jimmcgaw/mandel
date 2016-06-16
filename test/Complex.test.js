@@ -49,6 +49,15 @@ describe('Complex', function() {
   });
 
   describe('#exp', function() {
+    describe('given a complex number raised to 0', function() {
+      it('returns the real part augmented by 1', function () {
+        var complex = new Complex(3, 5);
+        var exponentiated = complex.exp(0);
+        expect(exponentiated.real).to.equal(complex.real + 1);
+        expect(exponentiated.imaginary).to.equal(0);
+      });
+    });
+
     describe('given a complex number raised to 2 power', function() {
       it('returns the square of the complex number', function () {
         var complex = new Complex(3, 5);
@@ -57,6 +66,14 @@ describe('Complex', function() {
         expect(squared.real).to.equal(product.real);
         expect(squared.imaginary).to.equal(product.imaginary);
       });
+    });
+  });
+
+  describe('#magnitude', function() {
+    it('returns the magnitude of a complex number', function () {
+      var complex = new Complex(3, -4);
+      var computedMagnitude = Math.sqrt( Math.pow(complex.real, 2) + Math.pow(complex.imaginary, 2));
+      expect(complex.magnitude()).to.equal(computedMagnitude);
     });
   });
 
@@ -75,4 +92,5 @@ describe('Complex', function() {
       expect(complex.prettyPrint()).to.equal('-3-4i');
     });
   });
+
 });
