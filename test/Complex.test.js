@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-import Complex from '../src/complex';
+import Complex from '../src/Complex';
 
 describe('Complex', function() {
   describe('#constructor', function() {

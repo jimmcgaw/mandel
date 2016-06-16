@@ -56,6 +56,10 @@ export default class Complex {
   }
 
   prettyPrint(){
-    return this.real.toString() + this.imaginary.toString() + 'i';
+    var operator = "";
+    if (this.imaginary >= 0){
+      operator = "+";
+    }
+    return this.real.toString() + operator + this.imaginary.toString() + 'i';
   }
 }
